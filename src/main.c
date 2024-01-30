@@ -2,11 +2,12 @@
 #include <pspkernel.h>
 #include <systemctrl.h>
 #include <systemctrl_se.h>
+
 #define JR_RA 0x03E00008
 #define LI_V0(n) ((0x24020000) | ((n) & 0xFFFF))
 
-PSP_MODULE_INFO("noumd_prx", 0x1000, 1, 0);
 PSP_HEAP_SIZE_MAX();
+PSP_MODULE_INFO("noumd_prx", 0x1000, 1, 0);
 
 static void redirectFunction(int *a, void *f)
 {
@@ -33,7 +34,7 @@ static int sceGpioPortReadPatched(void)
 	return *((int *)0xBE240004) & 0xFBFFFFFF;
 }
 
-static int main_thread(SceSize args, void *argp)
+static void umd_thread(SceSize args, void *argp)
 {
 	if (!sceKernelFindModuleByName("sceNp9660_driver") && !sceKernelFindModuleByName("sceIsofs_driver") && !sceKernelFindModuleByName("PRO_Inferno_Driver"))
 	{
@@ -53,12 +54,11 @@ static int main_thread(SceSize args, void *argp)
 	void *sceGpio_driver = sctrlHENFindFunction("sceLowIO_Driver", "sceGpio_driver", 0x4250D44A);
 	if (sceGpio_driver)
 		redirectFunction((int)sceGpio_driver, sceGpioPortReadPatched);
-	return 0;
 }
 
 int module_start(SceSize args, void *argp)
 {
-	SceUID thid = sceKernelCreateThread("NoUMD", main_thread, 0x18, 0x1000, 0, NULL);
+	SceUID thid = sceKernelCreateThread("NoUMD", umd_thread, 0x18, 0x1000, 0, NULL);
 	if (thid >= 0)
 		sceKernelStartThread(thid, args, argp);
 	return 0;
