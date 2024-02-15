@@ -2,10 +2,10 @@
 This plugin is the rewrite of the **NoUMD plugin** for PSP, which completely disables your PSP's UMD Drive. <br/><br/>
 Tested on `6.39 PRO-C2`, `6.39 TN-A Xtended`, `6.60 PRO-C2`, `6.61 PRO-C2` and `6.61 ME 2.3`. It should work on **every 6.XX (L)ME, PRO and HEN firmware**. More feedback would be appreciated!
 
-[Download and Installation](https://github.com/rreha/noumd/releases/latest)
+[Download and Installation](https://github.com/catmagicspell/noumd/releases/latest)
 
 # Credits
-- [reha](https://github.com/rreha) and [PonpiK](https://github.com/PonpiK) of **[Cat Magic Spell](https://github.com/catmagicspell)** for leading the project and testing.<br/>
+- [reha](https://github.com/rreha) and [PonpiK](https://github.com/PonpiK) of **[Cat Magic Spell](https://github.com/catmagicspell)** for leading the project and testing<br/>
 - bpeterson for the **[old fixed NoUMD plugin](https://wololo.net/talk/viewtopic.php?t=7741)**<br/>
 - Red Squirrel for **[the original NoUMD plugin](https://redsquirrel87.altervista.org/doku.php/noumd-plugin)**<br/>
 - [Acid_Snake](https://github.com/JoseAaronLopezGarcia) and [others who contributed to the ARK project](https://github.com/PSP-Archive/ARK-4/graphs/contributors) for **[ARK CFW](https://github.com/PSP-Archive/ARK-4)**<br/>
