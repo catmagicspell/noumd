@@ -1,5 +1,6 @@
-#ifndef __SCTRLLIBRARY_SE_H__
-#define __SCTRLLIBRARY_SE_H__
+#ifndef LIBPSPSCTRL_SE_H
+#define LIBPSPSCTRL_SE_H
+#pragma once
 
 /**
  * These functions are only available in SE-C and later,

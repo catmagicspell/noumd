@@ -1,10 +1,11 @@
-#ifndef __SCTRLLIBRARY_H__
-#define __SCTRLLIBRARY_H__
+#ifndef LIBPSPSCTRL_H
+#define LIBPSPSCTRL_H
+#pragma once
 
 #include <pspsdk.h>
+#include <pspinit.h>
 #include <pspkernel.h>
 #include <psploadexec_kernel.h>
-#include <pspinit.h>
 
 enum BootLoadFlags
 {
@@ -389,5 +390,4 @@ u32 sctrlKernelRand(void);
  * @return 0 on success, < 0 on error
  */
 int sctrlGetRealEthernetAddress(uint8_t *mac);
-
 #endif
